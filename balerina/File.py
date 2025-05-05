@@ -1,6 +1,6 @@
 
 # balerina/File.py
-code = '''
+code2 = '''
 from keras.datasets import imdb
 from tensorflow.keras import models, layers
 import numpy as np
@@ -34,3 +34,38 @@ results = model.evaluate(x_test, y_test)
 print("Test Accuracy:", results[1])
 '''
 
+code1='''
+from sklearn.datasets import fetch_california_housing
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+data = fetch_california_housing()
+x=data.data
+y=data.target
+
+scaler=StandardScaler().fit(x)
+x=scaler.transform(x)
+
+trainx ,testx,trainy,testy=train_test_split(x,y,test_size=.2)
+
+
+from keras.models import Sequential
+from keras.layers import Dense
+model=Sequential()
+
+model.add(Dense(64,input_shape=(8,),activation='relu' ))
+model.add(Dense(32,activation='relu'))
+model.add(Dense(1))
+
+model.compile(loss='mean_squared_error')
+model.fit(trainx,trainy,epochs=20,batch_size=64)
+res=model.evaluate(testx,testy)
+res
+
+
+ypred=model.predict(testx)
+
+import matplotlib.pyplot as plt
+plt.scatter(testy,ypred, alpha=.5)
+plt.plot([testy.min(), testy.max()], [testy.min(), testy.max()], color='red')
+
+ '''
