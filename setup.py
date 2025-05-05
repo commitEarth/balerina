@@ -1,13 +1,19 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="sundas",
-    version="0.1",
+    name="balerina",
+    version="0.1.0",
     packages=find_packages(),
     install_requires=[],
-    author="Your Name",
-    description="A simple package containing fil.py",
-    long_description=open("README.md").read() if __name__ == "__main__" else "",
+    author="Riyan Patel",
+    author_email="riyanpatel66mb@gmail.com",
+    description="A simple custom Python package with File.py",
+    long_description="A demo package named balerina.",
     long_description_content_type="text/markdown",
-    url="https://github.com/commitEarth/Sundas",
+    url="https://github.com/commitEarth/balerina",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License"
+    ],
+    python_requires=">=3.6",
 )
