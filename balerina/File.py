@@ -111,4 +111,4 @@ label = labels[np.argmax(predictions)]
 print(label)
 plt.imshow(test_x[:1][0])
 plt.show
- ''''
+'''
