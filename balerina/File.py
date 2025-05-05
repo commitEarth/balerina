@@ -1,0 +1,1 @@
+print("kanda Wada")
