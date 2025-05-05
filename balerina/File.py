@@ -68,6 +68,17 @@ import matplotlib.pyplot as plt
 plt.scatter(testy,ypred, alpha=.5)
 plt.plot([testy.min(), testy.max()], [testy.min(), testy.max()], color='red')
 
+
+extra 
+
+import pandas as pd
+df=pd.DataFrame(data.data,columns=data.feature_names)
+df["price"]=(data.target)
+df.sample(1)
+
+import matplotlib.pyplot as plt
+plt.scatter(testy,ypred, alpha=.5)
+plt.plot([testy.min(), testy.max()], [testy.min(), testy.max()], color='red')
  '''
 
 
