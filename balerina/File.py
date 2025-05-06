@@ -32,6 +32,25 @@ model.fit(x_train, y_train, epochs=4, batch_size=512, validation_split=0.2)
 
 results = model.evaluate(x_test, y_test)
 print("Test Accuracy:", results[1])
+
+
+extra 
+word_index = imdb.get_word_index()
+reverse_word_index = {value: key for key, value in word_index.items()}
+
+def decode_review(encoded_review):
+    return ' '.join([reverse_word_index.get(i - 3, '?') for i in encoded_review])
+sample_review = x_test[0].reshape(1, -1)  # Reshape for model input
+prediction = model.predict(sample_review)
+
+print("Predicted probability:", prediction[0][0])
+
+if prediction[0][0] >= 0.5:
+    print("✅ Positive review")
+else:
+    print("❌ Negative review")
+print(decode_review(test_data[0]))
+print("Actual label:", test_labels[0])  
 '''
 
 code1='''
